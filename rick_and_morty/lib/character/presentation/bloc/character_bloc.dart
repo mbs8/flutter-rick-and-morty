@@ -37,7 +37,7 @@ class CharacterBloc extends Bloc<CharacterEvent, CharacterState> {
       final response = await _interactor.fetchCharacters(state.page);
 
       emit(state.copyWith(
-        page: state.page,
+        page: state.page + 1,
         characters: List.of(state.characters)..addAll(response.results),
         hasReachedMax: state.page >= (response.info.pages ?? 1),
       ));

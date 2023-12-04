@@ -11,7 +11,8 @@ class CharacterRepositoryImpl implements CharacterRepository {
   const CharacterRepositoryImpl(this._service);
 
   final CharacterService _service;
+
   @override
   Future<CharacterApiResponse> getCharacters(int page) =>
-      _service.getCharacters();
+      _service.getCharacters(page);
 }

@@ -37,7 +37,8 @@ class _CharacterWidgetState extends State<CharacterWidget> {
                 state.result == ResultState.loading && state.isFirstPage) ...{
               const Center(
                 child: SizedBox(
-                  height: 100,
+                  height: 25,
+                  width: 25,
                   child: CircularProgressIndicator(),
                 ),
               )
@@ -54,7 +55,7 @@ class _CharacterWidgetState extends State<CharacterWidget> {
                 controller: _scrollController,
                 itemBuilder: (context, index) {
                   if (index < state.characters.length) {
-                    SizedBox(
+                    return SizedBox(
                       height: 200,
                       child: Text(state.characters[index].name),
                     );
@@ -64,7 +65,8 @@ class _CharacterWidgetState extends State<CharacterWidget> {
                     );
                   } else {
                     return const SizedBox(
-                      height: 100,
+                      height: 25,
+                      width: 25,
                       child: CircularProgressIndicator(),
                     );
                   }
@@ -95,7 +97,7 @@ class _CharacterWidgetState extends State<CharacterWidget> {
     final maxScroll = _scrollController.position.maxScrollExtent;
     final current = _scrollController.offset;
 
-    return current >= maxScroll * 0.9;
+    return current >= (maxScroll * 0.9);
   }
 
   void _requestCharacters() =>
