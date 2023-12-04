@@ -8,13 +8,14 @@ abstract class NetworkModule {
   String get baseUrl => 'https://rickandmortyapi.com/api/';
 
   @Named('PrettyLogger')
-  Interceptor providePrettyLogger() => PrettyDioLogger();
+  Interceptor providePrettyLogger() =>
+      PrettyDioLogger(responseBody: false, request: false);
 
   @singleton
   Dio provideDio(
     @Named('BaseUrl') String baseUrl,
     @Named('PrettyLogger') Interceptor prettyLogger,
-  ) => 
+  ) =>
       Dio(
         BaseOptions(baseUrl: baseUrl),
       )..interceptors.add(prettyLogger);

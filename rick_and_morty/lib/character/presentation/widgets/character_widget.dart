@@ -56,7 +56,7 @@ class _CharacterWidgetState extends State<CharacterWidget> {
                 itemBuilder: (context, index) {
                   if (index < state.characters.length) {
                     return SizedBox(
-                      height: 200,
+                      height: 50,
                       child: Text(state.characters[index].name),
                     );
                   } else if (state.result == ResultState.error) {
