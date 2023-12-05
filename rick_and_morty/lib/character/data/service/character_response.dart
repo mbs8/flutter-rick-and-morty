@@ -25,6 +25,18 @@ class CharacterInfoResponse extends Equatable {
   List<Object?> get props => [count, pages, next, prev];
 }
 
+class CharacterLocationResponse extends Equatable {
+  const CharacterLocationResponse(this.name);
+
+  factory CharacterLocationResponse.fromJson(Map<String, dynamic> json) =>
+      CharacterLocationResponse(json['name'] as String);
+
+  final String name;
+
+  @override
+  List<Object?> get props => [name];
+}
+
 class CharacterResponse extends Equatable {
   factory CharacterResponse.fromJson(Map<String, dynamic> json) =>
       CharacterResponse(
@@ -34,16 +46,12 @@ class CharacterResponse extends Equatable {
         json['species'] as String,
         json['type'] as String,
         json['image'] as String,
+        json['gender'] as String,
+        CharacterLocationResponse.fromJson(json['location']),
       );
 
-  const CharacterResponse(
-    this.id,
-    this.name,
-    this.status,
-    this.species,
-    this.type,
-    this.image,
-  );
+  const CharacterResponse(this.id, this.name, this.status, this.species,
+      this.type, this.image, this.gender, this.location);
 
   final int id;
   final String name;
@@ -51,9 +59,12 @@ class CharacterResponse extends Equatable {
   final String species;
   final String type;
   final String image;
+  final String gender;
+  final CharacterLocationResponse location;
 
   @override
-  List<Object?> get props => [id, name, status, species, type, image];
+  List<Object?> get props =>
+      [id, name, status, species, type, image, gender, location];
 }
 
 class CharacterApiResponse extends Equatable {

@@ -13,16 +13,17 @@ class CharacterServiceImpl implements CharacterService {
   const CharacterServiceImpl(this._client);
 
   final Dio _client;
-    
+
   @override
   Future<CharacterApiResponse> getCharacters([int page = 1]) async {
-    // https://rickandmortyapi.com/api/character?page=10
     final response = await _client.get(
       'character',
       queryParameters: {'page': '$page'},
     );
 
-    if(response.statusCode == 200) {
+    Future.delayed(const Duration(seconds: 2));
+
+    if (response.statusCode == 200) {
       return CharacterApiResponse.fromJson(response.data);
     }
 

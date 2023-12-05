@@ -10,7 +10,7 @@ class DefaultTryAgainWidget extends StatelessWidget {
         height: 100,
         child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           Text(
-            'Ops. something wrong happened',
+            'Ops, something wrong happened',
             style: Theme.of(context).textTheme.titleSmall,
           ),
           const SizedBox(
