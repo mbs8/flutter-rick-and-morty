@@ -4,6 +4,14 @@ import 'data/app_theme.dart';
 import 'data/app_theme_model.dart';
 
 class ApplicationTheme {
+  static AppThemeModel? byName(String themeName) {
+    try {
+      return themes[AppTheme.values.byName(themeName)];
+    } catch (_) {
+      return themes.entries.first.value;
+    }
+  }
+
   static final themes = {
     AppTheme.light: AppThemeModel(
       theme: AppTheme.light,
@@ -12,6 +20,7 @@ class ApplicationTheme {
         brightness: Brightness.light,
         cardTheme: const CardTheme(elevation: 4.0),
       ),
+      icon: const Icon(Icons.light_mode),
     ),
     AppTheme.dark: AppThemeModel(
       theme: AppTheme.dark,
@@ -19,6 +28,7 @@ class ApplicationTheme {
         useMaterial3: true,
         brightness: Brightness.dark,
       ),
+      icon: const Icon(Icons.dark_mode),
     ),
     AppTheme.halloween: AppThemeModel(
       theme: AppTheme.halloween,
@@ -28,6 +38,7 @@ class ApplicationTheme {
         textTheme: GoogleFonts.emilysCandyTextTheme(),
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.orange),
       ),
+      icon: const Icon(Icons.forest),
     ),
     AppTheme.piano: AppThemeModel(
       theme: AppTheme.piano,
@@ -57,6 +68,7 @@ class ApplicationTheme {
           ),
         ),
       ),
+      icon: const Icon(Icons.piano),
     ),
   };
 }
