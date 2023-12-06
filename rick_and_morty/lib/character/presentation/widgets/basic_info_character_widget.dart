@@ -32,8 +32,8 @@ class BasicInfoCharacterWidget extends StatelessWidget {
     }
 
     return '''
-            ${response.status} - ${response.gender}
-            ${response.species.toLowerCase()}
+${response.status} - ${response.gender}
+${response.species.toLowerCase()}
           ''';
   }
 }
