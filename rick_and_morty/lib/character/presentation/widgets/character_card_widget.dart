@@ -54,7 +54,7 @@ class CharacterCardWidget extends StatelessWidget {
                         ),
                         if (response.type.isNotEmpty) ...{
                           Text(
-                            'Full biography',
+                            'Type',
                             style: theme.textTheme.bodySmall
                                 ?.copyWith(fontSize: 13),
                           ),
