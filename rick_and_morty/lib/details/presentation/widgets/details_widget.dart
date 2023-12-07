@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_and_morty/details/presentation/bloc/character_details_bloc.dart';
 import 'package:rick_and_morty/details/presentation/widgets/character_details_location_widget.dart';
 import 'package:rick_and_morty/shared/datastructure/pair.dart';
-import 'package:rick_and_morty/shared/widgets/circle_widget.dart';
 import 'package:rick_and_morty/shared/widgets/default_loading_widget.dart';
 import 'package:rick_and_morty/shared/widgets/default_try_again_widget.dart';
 
