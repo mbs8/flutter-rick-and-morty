@@ -18,7 +18,7 @@ class ApplicationTheme {
       themeData: ThemeData(
         useMaterial3: true,
         brightness: Brightness.light,
-        cardTheme: const CardTheme(elevation: 4.0),
+        cardTheme: const CardThemeData(elevation: 4.0),
       ),
       icon: const Icon(Icons.light_mode),
     ),
@@ -46,7 +46,7 @@ class ApplicationTheme {
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.white,
         textTheme: GoogleFonts.aclonicaTextTheme(),
-        cardTheme: const CardTheme(
+        cardTheme: const CardThemeData(
           elevation: 1.0,
           color: Colors.white,
         ),

@@ -1,4 +1,5 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -12,9 +13,12 @@ import 'package:rick_and_morty/shared/theme/data/cubit/theme_cubit.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
-  runApp(DevicePreview(builder: (_) {
-    return const RickAndMortyApp();
-  }));
+  runApp(DevicePreview(
+    builder: (_) {
+      return const RickAndMortyApp();
+    },
+    enabled: kDebugMode,
+  ));
 }
 
 class RickAndMortyApp extends StatelessWidget {
